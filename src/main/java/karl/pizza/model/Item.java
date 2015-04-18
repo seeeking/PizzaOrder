@@ -10,11 +10,16 @@ public class Item {
 	}
 	
 	private String name;
+	private String catagory;
 	private Size size;
 	private double price;
 	
 	public void setName(String n) {
 		name = n;
+	}
+	
+	public void setCatagory(String n) {
+		catagory = n;
 	}
 	
 	public void setSize(Size size) {
@@ -28,6 +33,11 @@ public class Item {
 	@XmlElement(name = "name")
 	public String getName() {
 		return name;
+	}
+	
+	@XmlElement(name = "catagory")
+	public String getCatagory() {
+		return catagory;
 	}
 
 	@XmlElement(name = "size")
