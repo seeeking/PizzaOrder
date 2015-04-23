@@ -3,6 +3,8 @@
 <html>
 	<head>
 		<script type="text/javascript" src="<c:url value="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"/>" type="text/css"></script>
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
 		<title>pizza order</title>
 		<script>
 			$(document).ready(function(){
@@ -71,6 +73,7 @@
 					var x = validForm();
 					if(!x) {
 						alert("invalid order");
+						return;
 					}
 					var cart = getJSONOrder();
 					$.ajax({
@@ -123,6 +126,6 @@
 		</tr>
 		</table>
 		<input type = "submit" id = "make_order", value = "make order!"></input>
-		</form>s
+		</form>
 	</body>
 </html>

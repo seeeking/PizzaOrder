@@ -5,14 +5,16 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement
 public class Item {
-	public enum Size {
-		large, small, empty
-	}
 	
 	private String name;
 	private String catagory;
-	private Size size;
+	private String size;
 	private double price;
+	private long id;
+	
+	public void setId(long i) {
+		id = i;
+	}
 	
 	public void setName(String n) {
 		name = n;
@@ -22,7 +24,7 @@ public class Item {
 		catagory = n;
 	}
 	
-	public void setSize(Size size) {
+	public void setSize(String size) {
 		this.size = size;
 	}
 	
@@ -41,12 +43,17 @@ public class Item {
 	}
 
 	@XmlElement(name = "size")
-	public Size getSize() {
+	public String getSize() {
 		return size;
 	}
 
 	@XmlElement(name = "price")
 	public double getPrice() {
 		return price;
+	}
+	
+	@XmlElement(name = "id")
+	public long getId() {
+		return id;
 	}
 }
